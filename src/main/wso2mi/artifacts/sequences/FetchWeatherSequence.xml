@@ -1,0 +1,31 @@
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="FetchWeatherSequence">
+    <property name="uri.var.weatherKey" expression="fn:concat('weather:', $ctx:uri.var.lat, ':', $ctx:uri.var.lon)"/>
+    
+    <!-- Check if the weather data is in the cache -->
+    <call>
+        <endpoint>
+            <http method="get" uri-template="https://api.openweathermap.org/data/2.5/weather?lat={uri.var.lat}&amp;lon={uri.var.lon}&amp;appid=ddcf9664de007c89505510345c119ef6">
+                <timeout>
+                    <duration>5000</duration>
+                    <responseAction>fault</responseAction>
+                </timeout>
+            </http>
+        </endpoint>
+    </call>
+    
+    <!-- Log the payload before data mapping -->
+    <log level="custom">
+        <property name="message" value="Payload before data mapping"/>
+        <property name="payload" expression="$body"/>
+    </log>
+    
+    <datamapper config="gov:/datamapper/DMTest/DMTest.dmc" inputSchema="gov:/datamapper/DMTest/DMTest_inputSchema.json" outputSchema="gov:/datamapper/DMTest/DMTest_outputSchema.json"/>
+    
+    <!-- Log the payload after data mapping -->
+    <log level="custom">
+        <property name="message" value="Payload after data mapping"/>
+        <property name="payload" expression="$body"/>
+    </log>
+
+    <respond/>
+</sequence>

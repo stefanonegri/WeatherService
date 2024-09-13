@@ -1,0 +1,19 @@
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="GeoLocationSequence">
+    <call>
+        <endpoint>
+            <http method="get" uri-template="http://api.openweathermap.org/geo/1.0/direct?q={uri.var.city}&amp;limit=1&amp;appid=ddcf9664de007c89505510345c119ef6">
+                <timeout>
+                    <duration>5000</duration>
+                    <responseAction>fault</responseAction>
+                </timeout>
+            </http>
+        </endpoint>
+    </call>
+    <property name="uri.var.lat" expression="//lat/text()"/>
+    <property name="uri.var.lon" expression="//lon/text()"/>
+    <!-- Log the latitude and longitude -->
+    <log level="custom">
+        <property name="latitude" expression="get-property('uri.var.lat')"/>
+        <property name="longitude" expression="get-property('uri.var.lon')"/>
+    </log>
+</sequence>

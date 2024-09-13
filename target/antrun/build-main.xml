@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <copy todir="/Users/stefanonegri/wso2/MIDev/AlpitourDemo/WeatherService/target/tmp_docker/CompositeApps">
+      <fileset dir="/Users/stefanonegri/wso2/MIDev/AlpitourDemo/WeatherService/target">
+        <include name="*.car" />
+      </fileset>
+    </copy>
+    <move todir="/Users/stefanonegri/wso2/MIDev/AlpitourDemo/WeatherService/target/tmp_docker/CarbonHome/metadata">
+      <fileset dir="/Users/stefanonegri/wso2/MIDev/AlpitourDemo/WeatherService/target/tmp_docker/CarbonHome/.metadata" />
+    </move>
+    <replace file="/Users/stefanonegri/wso2/MIDev/AlpitourDemo/WeatherService/target/tmp_docker/Dockerfile">
+      <replacefilter value="CarbonHome/metadata/metadata_config.properties" token="CarbonHome/.metadata/metadata_config.properties" />
+      <replacefilter value="CarbonHome/metadata/references.properties" token="CarbonHome/.metadata/references.properties" />
+    </replace>
+  </target>
+</project>

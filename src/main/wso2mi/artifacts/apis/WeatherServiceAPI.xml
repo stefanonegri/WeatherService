@@ -1,0 +1,14 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="WeatherServiceAPI" context="/weather">
+    <resource methods="GET" uri-template="/{city}">
+        <inSequence>
+            <property name="uri.var.city" expression="get-property('uri.var.city')"/>
+            <property name="uri.var.api_key" value="your_api_key_here"/>
+
+            <!-- Call the geolocation sequence -->
+            <sequence key="GeoLocationSequence"/>
+
+            <!-- Call the fetch weather sequence -->
+            <sequence key="FetchWeatherSequence"/>
+        </inSequence>
+    </resource>
+</api>
