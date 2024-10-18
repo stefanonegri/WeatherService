@@ -168,4 +168,52 @@
       <properties></properties>
     </item>
   </artifact>
+  <artifact name="WeatherMapping" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>WeatherMapping.dmc</file>
+      <path>/_system/governance/datamapper/WeatherMapping</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="WeatherMapping_inputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>WeatherMapping_inputSchema.json</file>
+      <path>/_system/governance/datamapper/WeatherMapping</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="WeatherMapping_outputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>WeatherMapping_outputSchema.json</file>
+      <path>/_system/governance/datamapper/WeatherMapping</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="WeatherMapping" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>WeatherMapping.dmc</file>
+      <path>/_system/governance/datamapper/WeatherMapping</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="WeatherMapping_inputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>WeatherMapping_inputSchema.json</file>
+      <path>/_system/governance/datamapper/WeatherMapping</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="WeatherMapping_outputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>WeatherMapping_outputSchema.json</file>
+      <path>/_system/governance/datamapper/WeatherMapping</path>
+      <mediaType>text/plain</mediaType>
+      <properties/>
+    </item>
+  </artifact>
 </artifacts>

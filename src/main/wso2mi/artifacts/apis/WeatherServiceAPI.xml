@@ -6,13 +6,12 @@
                 <property name="message" value="Request received for city"/>
                 <property name="Requested City" expression="get-property('uri.var.city')"/>
             </log>
-
             <property name="uri.var.city" expression="get-property('uri.var.city')"/>
             <property name="uri.var.api_key" value="your_api_key_here"/>
             <!-- Call the geolocation sequence -->
             <sequence key="GeoLocationSequence"/>
             <!-- Call the fetch weather sequence -->
             <sequence key="FetchWeatherSequence"/>
-        </inSequence>
+        <datamapper config="gov:/datamapper/WeatherMapping/WeatherMapping.dmc" inputSchema="gov:/datamapper/WeatherMapping/WeatherMapping_inputSchema.json" outputSchema="gov:/datamapper/WeatherMapping/WeatherMapping_outputSchema.json" /></inSequence>
     </resource>
 </api>
